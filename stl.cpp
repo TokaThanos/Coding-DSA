@@ -64,8 +64,26 @@ void explainVector() {
     cout << v.empty(); // returns true(1) if vector is empty, otherwise false(0)
 }
 
+// to implement a list a doubly linked list is maintained internally
+void explainList() {
+    list<int> ls;
+
+    ls.push_back(2); // {2}
+    ls.emplace_back(4); // {2, 4}
+    ls.push_front(5); // {5, 2, 4}
+    ls.emplace_front(6); // {6, 5, 2, 4}
+
+    for (int elem : ls) {
+        cout << elem << endl;
+    }
+
+    // rest functions are same as vector
+    // begin, end, clear, insert, size, swap
+}
+
 int main() {
     // explainPair();
-    explainVector();
+    // explainVector();
+    explainList();
     return 0;
 }
