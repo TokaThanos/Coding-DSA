@@ -160,7 +160,7 @@ void explainPQ() {
     cout << minPQ.top() << endl; // 5
 
     minPQ.emplace(2); // {2, 5, 8, 10}
-    minPQ.pop(); // {2, 5, 8}
+    minPQ.pop(); // {5, 8, 10}
 }
 
 // Internally uses tree data structure
