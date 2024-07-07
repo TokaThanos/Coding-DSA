@@ -176,7 +176,7 @@ void explainSet() {
     st.insert(3); // {1, 2, 3, 4}
 
     auto it = st.find(6); // returns a pointer to st.end() as 6 is not present in the set
-    it = st.find(4); // returns a pointer pointing to the element 3
+    it = st.find(4); // returns a pointer pointing to the element 4
 
     st.erase(3); // {1, 2, 4} // takes O(logn)
     st.erase(it); // {1, 2} // takes O(1)
@@ -228,6 +228,12 @@ void explainMap() {
     it = mpp.find(3);
 
     cout << (*it).second << endl;
+
+    for (const auto& elem : mpp) {
+        // auto& doesn't copy the large data structure instead makes the variable a reference to the original element 
+        // const doesn't permit the modification of the element using the variable
+        cout << elem.first << "->" << elem.second << endl;
+    }
 
     // erase, swap, size, empty are same as above
 }
