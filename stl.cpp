@@ -222,9 +222,10 @@ void explainMap() {
     mpp.insert({2, 9});
 
     cout << mpp[1];
-    cout << mpp[5]; // it prints 0, as key 5 is not present inside the map
+    cout << mpp[5]; // this inserts a new key value pair {5, 0} and prints 0 which is the default value for int
 
-    auto it = mpp.find(5); // iterator points to mpp.end()
+    // To avoid modifying the map use mpp.find()
+    auto it = mpp.find(5); // iterator points to mpp.end() in case key 5 is not present but in this case it points to {5, 0}
     it = mpp.find(3);
 
     cout << (*it).second << endl;
